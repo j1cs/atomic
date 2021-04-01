@@ -1,0 +1,127 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: golang-app
+  labels:
+    app: golang
+spec:
+  containers:
+    - name: golang-app
+      image: atomic_golang
+      imagePullPolicy: Never
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: golang-service
+spec:
+  selector:
+    app: golang
+  ports:
+    - port: 9001 # Default port for image
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: java-app
+  labels:
+    app: java
+spec:
+  containers:
+    - name: java-app
+      image: atomic_java
+      imagePullPolicy: Never
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: java-service
+spec:
+  selector:
+    app: java
+  ports:
+    - port: 9002
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nodejs-app
+  labels:
+    app: nodejs
+spec:
+  containers:
+    - name: nodejs-app
+      image: atomic_nodejs
+      imagePullPolicy: Never
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs-service
+spec:
+  selector:
+    app: nodejs
+  ports:
+    - port: 9003
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: php-app
+  labels:
+    app: php
+spec:
+  containers:
+    - name: php-app
+      image: atomic_php
+      imagePullPolicy: Never
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: php-service
+spec:
+  selector:
+    app: php
+  ports:
+    - port: 9004
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: python-app
+  labels:
+    app: python
+spec:
+  containers:
+    - name: python-app
+      image: atomic_python
+      imagePullPolicy: Never
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: python-service
+spec:
+  selector:
+    app: python
+  ports:
+    - port: 9005

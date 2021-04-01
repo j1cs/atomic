@@ -1,0 +1,29 @@
+version: '3'
+services:
+  golang:
+    # will build ./docker/web/Dockerfile
+    build: ./golang/
+    ports:
+     - "9001:9001"
+    container_name: "atomic_golang"
+  java:
+    build: ./java/
+    ports:
+     - "9002:9002"
+    container_name: "atomic_java"
+  nodejs:
+    build: ./nodejs/
+    ports:
+     - "9003:9003"
+    container_name: "atomic_nodejs"
+  php:
+    build: ./php/
+    ports:
+     - "9004:9004"
+    container_name: "atomic_php"
+  python:
+    build: ./python/
+    ports:
+     - "9005:9005"
+    container_name: "atomic_python"
+

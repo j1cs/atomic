@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: atomic-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /golang
+          backend:
+            serviceName: golang-service
+            servicePort: 9001
+        - path: /java
+          backend:
+            serviceName: java-service
+            servicePort: 9002
+        - path: /nodejs
+          backend:
+            serviceName: nodejs-service
+            servicePort: 9003
+        - path: /php
+          backend:
+            serviceName: php-service
+            servicePort: 9004
+        - path: /python
+          backend:
+            serviceName: python-service
+            servicePort: 9005
